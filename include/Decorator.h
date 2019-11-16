@@ -15,29 +15,32 @@ class Servidor {
 		virtual void run();
 };
 
-class Service : Servidor {
+class Service : public Servidor {
 
 	public:
 		Service();
 		void run();
 };
 
-class Decorator : Servidor {
+class Decorator : public Servidor {
 
 	protected:
 		Servidor Server;
 
 	public:
 		Decorator(Servidor Server);
-
 };
 
-class Extension : Decorator {
+class Extension : public Decorator, public Servidor   {
 	public:
-		Extension();
+		Extension(Servidor server);
 		void run();
-
 	private:
 		string getIP();
 
+};
+
+class DecoratorTeste {
+    public: 
+        DecoratorTeste();
 };

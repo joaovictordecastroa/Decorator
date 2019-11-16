@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "Makefile": "cpp",
+        "iostream": "cpp"
+    }
+}
